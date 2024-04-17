@@ -1,9 +1,9 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/model/pet.dart';
-import 'package:adopta_amigo/app/profile/function.dart';
-import 'package:adopta_amigo/app/profile/profile_screen.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/model/pet.dart';
+import 'package:adoptAmigo/app/profile/function.dart';
+import 'package:adoptAmigo/app/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:adopta_amigo/app/profile/collaborator_screen.dart';
+import 'package:adoptAmigo/app/profile/collaborator_screen.dart';
 
 class PetScreen extends StatelessWidget {
   const PetScreen({super.key, required this.uid});
@@ -61,9 +61,8 @@ class PetScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                           snapshot.data!.descripcion,
-                                style: TextStyle(fontSize: 20), softWrap: true)
+                        Text(snapshot.data!.descripcion,
+                            style: TextStyle(fontSize: 20), softWrap: true)
                       ],
                     ),
                     Row(
@@ -108,7 +107,7 @@ class PetScreen extends StatelessWidget {
                               },
                             ),
                           ),
-                          adoptPet(context, snapshot , uid)
+                          adoptPet(context, snapshot, uid)
                         ],
                       )),
                     )
@@ -123,23 +122,22 @@ class PetScreen extends StatelessWidget {
     );
   }
 
-  Card adoptPet(BuildContext context, AsyncSnapshot<Pet> snapshot , uid) {
+  Card adoptPet(BuildContext context, AsyncSnapshot<Pet> snapshot, uid) {
     if (snapshot.data!.isAdopted) {
       return Card(
         color: Color.fromARGB(179, 74, 43, 229),
         margin: const EdgeInsets.only(left: 35, right: 35, bottom: 10),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         child: ListTile(
-          leading: Icon(
-            Icons.logout,
-            color: Colors.black54,
-          ),
-          title: Text(
-            '${snapshot.data!.nombre} ya esta adoptado',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          trailing: Icon(Icons.arrow_forward_ios_outlined)         
-        ),
+            leading: Icon(
+              Icons.logout,
+              color: Colors.black54,
+            ),
+            title: Text(
+              '${snapshot.data!.nombre} ya esta adoptado',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            trailing: Icon(Icons.arrow_forward_ios_outlined)),
       );
     } else {
       return Card(
@@ -157,13 +155,10 @@ class PetScreen extends StatelessWidget {
           ),
           trailing: Icon(Icons.arrow_forward_ios_outlined),
           onTap: () => {
-               setAdoption(uid).then((value) => {
-
-                Navigator.push(
-                context, MaterialPageRoute(builder: (context) => ProfileScreen()))
-  
-
-               })
+            setAdoption(uid).then((value) => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfileScreen()))
+                })
           },
         ),
       );

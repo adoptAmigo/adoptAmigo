@@ -1,6 +1,6 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/register/function.dart';
-import 'package:adopta_amigo/app/widgets.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/register/function.dart';
+import 'package:adoptAmigo/app/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
@@ -171,17 +171,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     children: <Widget>[
                       Text("Already have an account?"),
                       // todo: poner TextButton
-                         TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('Login',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                    color: Colors.black)),
-                          ),
-                      
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Login',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Colors.black)),
+                      ),
                     ],
                   )),
             ],

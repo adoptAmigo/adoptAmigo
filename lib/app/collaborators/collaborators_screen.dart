@@ -1,9 +1,9 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/profile/collaborator_screen.dart';
-import 'package:adopta_amigo/app/profile/profile_screen.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/profile/collaborator_screen.dart';
+import 'package:adoptAmigo/app/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:adopta_amigo/app/collaborators/functions.dart';
-import 'package:adopta_amigo/app/model/collaborator.dart';
+import 'package:adoptAmigo/app/collaborators/functions.dart';
+import 'package:adoptAmigo/app/model/collaborator.dart';
 
 final List<String> _menuItems = <String>['Home', 'Pefil', 'Protectoras'];
 
@@ -79,7 +79,7 @@ class MainListCollaborators extends StatelessWidget {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (BuildContext context, int index) {
                     final item = snapshot.data;
-                    var data = item!.entries.toList();                    
+                    var data = item!.entries.toList();
                     return Container(
                       height: 136,
                       margin: const EdgeInsets.symmetric(
@@ -88,67 +88,67 @@ class MainListCollaborators extends StatelessWidget {
                           border: Border.all(color: const Color(0xFFE0E0E0)),
                           borderRadius: BorderRadius.circular(8.0)),
                       padding: const EdgeInsets.all(8),
-                      child: 
-                      GestureDetector(
+                      child: GestureDetector(
                         onTap: () {
-                       Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CollaboratorScreen(uid : data[index].key)));
-                               
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CollaboratorScreen(
+                                      uid: data[index].key)));
                         },
-                        child:Row(
-                        children: [           
-                          Expanded(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                data[index].value.nombre,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 8),
-                              Text("${data[index].value.contacto} -  ${data[index].value.ubicacion}",
-                                  style: Theme.of(context).textTheme.bodySmall),
-                              const SizedBox(height: 8),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icons.bookmark_border_rounded,
-                                  Icons.share,
-                                  Icons.more_vert
-                                ].map((e) {
-                                  return InkWell(
-                                    onTap: () {},
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 8.0),
-                                      child: Icon(e, size: 16),
-                                    ),
-                                  );
-                                }).toList(),
-                              )
-                            ],
-                          )),
-                          Container(
-                              width: 100,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                  color: Colors.grey,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: NetworkImage(data[index].value.urlImage),
-                                  ))),
-                        ],
-                      ), 
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  data[index].value.nombre,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                    "${data[index].value.contacto} -  ${data[index].value.ubicacion}",
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall),
+                                const SizedBox(height: 8),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icons.bookmark_border_rounded,
+                                    Icons.share,
+                                    Icons.more_vert
+                                  ].map((e) {
+                                    return InkWell(
+                                      onTap: () {},
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 8.0),
+                                        child: Icon(e, size: 16),
+                                      ),
+                                    );
+                                  }).toList(),
+                                )
+                              ],
+                            )),
+                            Container(
+                                width: 100,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage(
+                                          data[index].value.urlImage),
+                                    ))),
+                          ],
+                        ),
                       ),
-            
-                      
                     );
                   },
                 ),
@@ -172,19 +172,19 @@ class DrawerMenu extends StatelessWidget {
         child: ListView(
           children: _menuItems
               .map((item) => ListTile(
-                    onTap: () {                
+                    onTap: () {
                       if (item == "Perfil") {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ProfileScreen()));
                       } else if (item == "Home") {
-                          Navigator.push(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => HomeScreen()));
-                      }else if(item == "Protectoras"){
-                         Navigator.push(
+                      } else if (item == "Protectoras") {
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CollaboratorsScreen()));

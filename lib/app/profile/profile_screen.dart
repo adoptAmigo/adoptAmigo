@@ -1,9 +1,9 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/profile/function.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/profile/function.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:adopta_amigo/app/login/login_screen.dart';
-import 'package:adopta_amigo/app/profile/pet_screen.dart';
+import 'package:adoptAmigo/app/login/login_screen.dart';
+import 'package:adoptAmigo/app/profile/pet_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -113,7 +113,7 @@ class ProfileScreen extends StatelessWidget {
                         ],
                       )),
                     ),
-                   Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -141,7 +141,7 @@ class ProfileScreen extends StatelessWidget {
             future: getUserPetList(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-               return ListView.builder(
+                return ListView.builder(
                   itemCount: snapshot.data!.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {

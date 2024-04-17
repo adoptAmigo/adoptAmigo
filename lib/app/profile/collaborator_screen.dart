@@ -1,8 +1,8 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/profile/function.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/profile/function.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:adopta_amigo/app/login/login_screen.dart';
+import 'package:adoptAmigo/app/login/login_screen.dart';
 
 class CollaboratorScreen extends StatelessWidget {
   const CollaboratorScreen({super.key, required this.uid});
@@ -53,7 +53,7 @@ class CollaboratorScreen extends StatelessWidget {
                     ),
                     const SizedBox(
                       height: 15,
-                    ),        
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -65,7 +65,7 @@ class CollaboratorScreen extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children:  [
+                      children: [
                         Text(
                           "Ubicación :  ${snapshot.data!.ubicacion}",
                           style: TextStyle(fontSize: 20),

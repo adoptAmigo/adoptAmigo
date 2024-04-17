@@ -494,13 +494,13 @@
       "languageVersion": "3.2"
     },
     {
-      "name": "adopta_amigo",
+      "name": "adoptAmigo",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-04-17T16:21:16.264351Z",
+  "generated": "2024-04-17T16:52:26.949676Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

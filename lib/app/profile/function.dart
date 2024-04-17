@@ -1,6 +1,6 @@
-import 'package:adopta_amigo/app/model/customer.dart';
-import 'package:adopta_amigo/app/model/pet.dart';
-import 'package:adopta_amigo/app/model/collaborator.dart';
+import 'package:adoptAmigo/app/model/customer.dart';
+import 'package:adoptAmigo/app/model/pet.dart';
+import 'package:adoptAmigo/app/model/collaborator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,32 +1,26 @@
-import 'package:adopta_amigo/app/model/customer.dart';
+import 'package:adoptAmigo/app/model/customer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 
-
 Future register(String email, String password, String nombre, String apellido,
     String telefono) async {
- 
-    Customer customer = getCustomer(nombre, apellido, telefono, email);
+  Customer customer = getCustomer(nombre, apellido, telefono, email);
 
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
-    UserCredential userCredential = await auth.createUserWithEmailAndPassword(
-        email: email, password: password);
+  UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+      email: email, password: password);
 
-    User? user = userCredential.user;
+  User? user = userCredential.user;
 
-    if (user != null) {
-      await firestore
-          .collection('usuarios')
-          .doc(user.uid)
-          .set(customer.toMap());
-      return true;
-    } else {
-      return false;
-    }
-
+  if (user != null) {
+    await firestore.collection('usuarios').doc(user.uid).set(customer.toMap());
+    return true;
+  } else {
+    return false;
+  }
 }
 
 Customer getCustomer(
@@ -42,5 +36,3 @@ Customer getCustomer(
 
   return data;
 }
-
-

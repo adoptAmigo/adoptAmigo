@@ -1,7 +1,7 @@
-import 'package:adopta_amigo/app/home/home.dart';
-import 'package:adopta_amigo/app/login/function.dart';
-import 'package:adopta_amigo/app/register/register_screen.dart';
-import 'package:adopta_amigo/app/widgets.dart';
+import 'package:adoptAmigo/app/home/home.dart';
+import 'package:adoptAmigo/app/login/function.dart';
+import 'package:adoptAmigo/app/register/register_screen.dart';
+import 'package:adoptAmigo/app/widgets.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 setState(() {
                                   isLoading = true;
                                 });
-                                  await login(email, password)
+                                await login(email, password)
                                     .then((data) => {
                                           if (data)
                                             {
@@ -109,19 +109,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                                           HomeScreen()))
                                             }
                                           else
-                                            {                                            
+                                            {
                                               setState(() {
                                                 isLoading = false;
                                               })
                                             }
                                         })
                                     .catchError((error) {
-
                                   setState(() {
                                     isLoading = false;
                                   });
 
-                                 // showToast("Login error", "error");
+                                  // showToast("Login error", "error");
                                 });
                               }
                             },

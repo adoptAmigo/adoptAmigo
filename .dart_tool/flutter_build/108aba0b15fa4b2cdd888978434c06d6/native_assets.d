@@ -1,0 +1,1 @@
+ /Users/guidosantibanez/adoptAmigo/.dart_tool/flutter_build/108aba0b15fa4b2cdd888978434c06d6/native_assets.yaml: 

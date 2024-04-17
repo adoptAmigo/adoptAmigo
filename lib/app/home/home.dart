@@ -1,9 +1,9 @@
-import 'package:adopta_amigo/app/profile/pet_screen.dart';
-import 'package:adopta_amigo/app/profile/profile_screen.dart';
+import 'package:adoptAmigo/app/profile/pet_screen.dart';
+import 'package:adoptAmigo/app/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:adopta_amigo/app/home/function.dart';
-import 'package:adopta_amigo/app/model/pet.dart';
-import 'package:adopta_amigo/app/collaborators/collaborators_screen.dart';
+import 'package:adoptAmigo/app/home/function.dart';
+import 'package:adoptAmigo/app/model/pet.dart';
+import 'package:adoptAmigo/app/collaborators/collaborators_screen.dart';
 
 final List<String> _menuItems = <String>['Home', 'Perfil', 'Protectoras'];
 
@@ -77,7 +77,7 @@ class MainListPets extends StatelessWidget {
           }
           if (snapshot.hasData) {
             return Center(
-              child: Container(               
+              child: Container(
                 constraints: const BoxConstraints(maxWidth: 400),
                 child: ListView.builder(
                   itemCount: snapshot.data!.length,
