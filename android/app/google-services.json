@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "695985571055",
+    "project_id": "adoptamigo-ae1c2",
+    "storage_bucket": "adoptamigo-ae1c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695985571055:android:5b1145966e70388a82c71a",
+        "android_client_info": {
+          "package_name": "com.adoptamigo.proyecto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Wn2i2TEg6vxLeQwujTGVdxqtXD4ZZZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695985571055:android:ddd8c5126ac5eb1c82c71a",
+        "android_client_info": {
+          "package_name": "com.example.adopta_amigo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Wn2i2TEg6vxLeQwujTGVdxqtXD4ZZZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
