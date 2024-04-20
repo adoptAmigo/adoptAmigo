@@ -31,7 +31,7 @@ class PetList extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final bool isLargeScreen = width > 800;
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       home: Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
@@ -48,10 +48,7 @@ class PetList extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('../assets/logo_2.png',
-                    height: 75, fit: BoxFit.contain)
-              ],
+              children: [Text("AdoptAmigo")],
             ),
           ),
         ),
