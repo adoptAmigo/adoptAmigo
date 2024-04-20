@@ -46,10 +46,7 @@ class CollaboratorList extends StatelessWidget {
                   ),
             title: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 11.0),
-              child: AspectRatio(
-                aspectRatio: 4,
-                child: Image.asset('../assets/logo_2.png'),
-              ),
+              child: AspectRatio(aspectRatio: 4, child: Text("AdoptAmigo")),
             )),
         drawer: isLargeScreen ? null : DrawerMenu(scaffoldKey: _scaffoldKey),
         body: MainListCollaborators(),
