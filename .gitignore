@@ -16,5 +16,5 @@
 
 # Archivos de configuración específicos de VS Code
 .vscode/
-/android
-/ios
+.android/
+.ios/
