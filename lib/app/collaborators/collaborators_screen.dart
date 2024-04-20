@@ -1,11 +1,11 @@
-import 'package:adoptAmigo/app/home/home.dart';
+import "package:adoptAmigo/app/home/home.dart";
 import 'package:adoptAmigo/app/profile/collaborator_screen.dart';
 import 'package:adoptAmigo/app/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:adoptAmigo/app/collaborators/functions.dart';
 import 'package:adoptAmigo/app/model/collaborator.dart';
 
-final List<String> _menuItems = <String>['Home', 'Pefil', 'Protectoras'];
+final List<String> _menuItems = <String>['Home', 'Perfil', 'Protectoras'];
 
 class CollaboratorsScreen extends StatefulWidget {
   @override
@@ -165,6 +165,7 @@ class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key, required GlobalKey<ScaffoldState> scaffoldKey})
       : _scaffoldKey = scaffoldKey;
 
+  // ignore: unused_field
   final GlobalKey<ScaffoldState> _scaffoldKey;
 
   @override
