@@ -31,7 +31,7 @@ class CollaboratorScreen extends StatelessWidget {
                       children: const [
                         CircleAvatar(
                           maxRadius: 65,
-                          backgroundImage: AssetImage("iprofile.jpg"),
+                          backgroundImage: AssetImage("assets/iprofile.jpg"),
                         ),
                       ],
                     ),
