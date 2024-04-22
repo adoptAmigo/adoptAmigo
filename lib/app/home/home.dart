@@ -35,23 +35,19 @@ class PetList extends StatelessWidget {
       home: Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(182, 14, 172, 116),
-          elevation: 0,
-          titleSpacing: 1,
-          leading: isLargeScreen
-              ? null
-              : IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () => _scaffoldKey.currentState?.openDrawer(),
-                ),
-          title: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text("AdoptAmigo")],
-            ),
-          ),
-        ),
+            backgroundColor: Color.fromARGB(182, 14, 172, 116),
+            elevation: 0,
+            titleSpacing: 1,
+            leading: isLargeScreen
+                ? null
+                : IconButton(
+                    icon: const Icon(Icons.menu),
+                    onPressed: () => _scaffoldKey.currentState?.openDrawer(),
+                  ),
+            title: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: AspectRatio(aspectRatio: 10, child: Text("AdoptAmigo")),
+            )),
         drawer: isLargeScreen ? null : DrawerMenu(scaffoldKey: _scaffoldKey),
         body: MainListPets(),
       ),

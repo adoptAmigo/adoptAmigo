@@ -63,15 +63,20 @@ class CollaboratorScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(36.0),
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text(
                           "Ubicación :  ${snapshot.data!.ubicacion}",
                           style: TextStyle(fontSize: 20),
-                        )
-                      ],
-                    ),
+                          softWrap: true,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               );

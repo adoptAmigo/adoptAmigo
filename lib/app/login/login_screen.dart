@@ -159,19 +159,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: Colors.black)),
                           ),
                         ],
-                      ))
+                      )),
+                  Expanded(
+                      child: FadeInUp(
+                          duration: Duration(milliseconds: 1200),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 3,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/logo1.jpg'),
+                                    fit: BoxFit.scaleDown)),
+                          )))
                 ],
               ),
             ),
-            FadeInUp(
-                duration: Duration(milliseconds: 1200),
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 3,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/logo1.jpg'),
-                          fit: BoxFit.scaleDown)),
-                ))
           ],
         ),
       ),

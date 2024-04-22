@@ -31,13 +31,13 @@ class CollaboratorList extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final bool isLargeScreen = width > 800;
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       home: Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Color.fromARGB(182, 14, 172, 116),
             elevation: 0,
-            titleSpacing: 0,
+            titleSpacing: 1,
             leading: isLargeScreen
                 ? null
                 : IconButton(
@@ -45,8 +45,8 @@ class CollaboratorList extends StatelessWidget {
                     onPressed: () => _scaffoldKey.currentState?.openDrawer(),
                   ),
             title: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 11.0),
-              child: AspectRatio(aspectRatio: 4, child: Text("AdoptAmigo")),
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: AspectRatio(aspectRatio: 10, child: Text("AdoptAmigo")),
             )),
         drawer: isLargeScreen ? null : DrawerMenu(scaffoldKey: _scaffoldKey),
         body: MainListCollaborators(),
@@ -82,7 +82,8 @@ class MainListCollaborators extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(
                           horizontal: 16, vertical: 8.0),
                       decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xFFE0E0E0)),
+                          border: Border.all(
+                              color: Color.fromARGB(255, 85, 215, 49)),
                           borderRadius: BorderRadius.circular(8.0)),
                       padding: const EdgeInsets.all(8),
                       child: GestureDetector(
@@ -112,24 +113,7 @@ class MainListCollaborators extends StatelessWidget {
                                     "${data[index].value.contacto} -  ${data[index].value.ubicacion}",
                                     style:
                                         Theme.of(context).textTheme.bodySmall),
-                                const SizedBox(height: 8),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icons.bookmark_border_rounded,
-                                    Icons.share,
-                                    Icons.more_vert
-                                  ].map((e) {
-                                    return InkWell(
-                                      onTap: () {},
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 8.0),
-                                        child: Icon(e, size: 16),
-                                      ),
-                                    );
-                                  }).toList(),
-                                )
+                                const SizedBox(height: 8)
                               ],
                             )),
                             Container(

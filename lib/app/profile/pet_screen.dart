@@ -58,12 +58,17 @@ class PetScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(snapshot.data!.descripcion,
-                            style: TextStyle(fontSize: 20), softWrap: true)
-                      ],
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                          child: (Text(snapshot.data!.descripcion,
+                              style: TextStyle(fontSize: 20), softWrap: true))),
+                    ),
+                    const SizedBox(
+                      height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
