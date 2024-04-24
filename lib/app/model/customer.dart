@@ -3,15 +3,16 @@ class Customer {
   final String apellido;
   final String email;
   final String telefono;
-  final String fechaRegistro; 
+  final String fechaRegistro;
+  final bool isAdmin;
 
-  Customer({
-    required this.nombre,
-    required this.apellido,
-    required this.email,
-    required this.telefono,
-    required this.fechaRegistro
-  });
+  Customer(
+      {required this.nombre,
+      required this.apellido,
+      required this.email,
+      required this.telefono,
+      required this.fechaRegistro,
+      required this.isAdmin});
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -19,7 +20,8 @@ class Customer {
       'apellido': apellido,
       'email': email,
       'telefono': telefono,
-      'fechaRegistro' : fechaRegistro
+      'fechaRegistro': fechaRegistro,
+      'isAdmin': isAdmin
     };
   }
 
@@ -30,6 +32,7 @@ class Customer {
       email: map['email'] as String,
       telefono: map['telefono'] as String,
       fechaRegistro: map['fechaRegistro'] as String,
+      isAdmin: map['isAdmin'] as bool,
     );
   }
 }
