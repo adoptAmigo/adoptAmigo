@@ -1,3 +1,16 @@
+// Añade esto al principio de tu archivo build.gradle a nivel de proyecto
+buildscript {
+    ext.kotlin_version = '1.8.20'  // Asegúrate de usar la última versión estable de Kotlin
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0' // Utiliza la versión de Gradle compatible con tu versión de Android Studio
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -16,3 +29,5 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+
