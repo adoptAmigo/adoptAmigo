@@ -3,6 +3,7 @@ import 'package:adoptAmigo/app/profile/function.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:adoptAmigo/app/login/login_screen.dart';
+import 'package:adoptAmigo/app/pet/pet_form_screen.dart';
 import 'package:adoptAmigo/app/profile/pet_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -85,33 +86,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Container(
                       child: Expanded(
-                          child: ListView(
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Card(
-                            color: Colors.white70,
-                            margin: const EdgeInsets.only(
-                                left: 35, right: 35, bottom: 10),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.logout,
-                                color: Colors.black54,
-                              ),
-                              title: Text(
-                                'Logout',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              trailing: Icon(Icons.arrow_forward_ios_outlined),
-                              onTap: () => {_signOut(context)},
-                            ),
-                          )
-                        ],
-                      )),
+                          child: optionsView(context, snapshot.data!.isAdmin)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -132,6 +107,24 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  ListView optionsView(BuildContext context, bool isAdmin) {
+    if (isAdmin) {
+      return ListView(
+        children: [
+          ActionButton(textButton: 'Salir de la aplicación'),
+          ActionButton(textButton: 'Mascotas')
+          // TODO : ActionButton('Protectoras')
+        ],
+      );
+    } else {
+      return ListView(
+        children: [
+          ActionButton(textButton: 'Salir de la aplicación'),
+        ],
+      );
+    }
   }
 
   Widget petListView() {
@@ -200,6 +193,73 @@ class ProfileScreen extends StatelessWidget {
               }
               return CircularProgressIndicator();
             }));
+  }
+}
+
+class ActionButton extends StatelessWidget {
+  const ActionButton({super.key, required this.textButton});
+
+  final textButton;
+
+  @override
+  Widget build(BuildContext context) {
+    if (textButton == "Mascotas") {
+      return Card(
+        color: Colors.white70,
+        margin: const EdgeInsets.only(left: 35, right: 35, bottom: 10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        child: ListTile(
+          leading: Icon(
+            Icons.logout,
+            color: Colors.black54,
+          ),
+          title: Text(
+            textButton,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          trailing: Icon(Icons.arrow_forward_ios_outlined),
+          onTap: () => {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PetFormScreen()))
+          },
+        ),
+      );
+    } else if (textButton == "Salir de la aplicación") {
+      return Card(
+        color: Colors.white70,
+        margin: const EdgeInsets.only(left: 35, right: 35, bottom: 10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        child: ListTile(
+          leading: Icon(
+            Icons.logout,
+            color: Colors.black54,
+          ),
+          title: Text(
+            textButton,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          trailing: Icon(Icons.arrow_forward_ios_outlined),
+          onTap: () => {_signOut(context)},
+        ),
+      );
+    }
+    return Card(
+      color: Colors.white70,
+      margin: const EdgeInsets.only(left: 35, right: 35, bottom: 10),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      child: ListTile(
+        leading: Icon(
+          Icons.logout,
+          color: Colors.black54,
+        ),
+        title: Text(
+          textButton,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        trailing: Icon(Icons.arrow_forward_ios_outlined),
+        onTap: () => {_signOut(context)},
+      ),
+    );
   }
 }
 

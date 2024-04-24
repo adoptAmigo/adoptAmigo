@@ -26,13 +26,13 @@ Future register(String email, String password, String nombre, String apellido,
 Customer getCustomer(
     String nombre, String apellido, String telefono, String email) {
   final data = Customer(
-    nombre: nombre,
-    apellido: apellido,
-    email: email,
-    telefono: telefono,
-    fechaRegistro:
-        DateFormat("yyyy-MM-dd").add_jm().format(DateTime.now()).toString(),
-  );
+      nombre: nombre,
+      apellido: apellido,
+      email: email,
+      telefono: telefono,
+      fechaRegistro:
+          DateFormat("yyyy-MM-dd").add_jm().format(DateTime.now()).toString(),
+      isAdmin: false);
 
   return data;
 }
